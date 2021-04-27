@@ -15,6 +15,7 @@
 		0072B6D2263187E9000E4BFB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0072B6D0263187E9000E4BFB /* LaunchScreen.storyboard */; };
 		0072B6DD263187E9000E4BFB /* Life_CounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0072B6DC263187E9000E4BFB /* Life_CounterTests.swift */; };
 		0072B6E8263187E9000E4BFB /* Life_CounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0072B6E7263187E9000E4BFB /* Life_CounterUITests.swift */; };
+		0072B7072638782F000E4BFB /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0072B7062638782F000E4BFB /* HistoryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		0072B6E3263187E9000E4BFB /* Life CounterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Life CounterUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0072B6E7263187E9000E4BFB /* Life_CounterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Life_CounterUITests.swift; sourceTree = "<group>"; };
 		0072B6E9263187E9000E4BFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0072B7062638782F000E4BFB /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				0072B6CE263187E9000E4BFB /* Assets.xcassets */,
 				0072B6D0263187E9000E4BFB /* LaunchScreen.storyboard */,
 				0072B6D3263187E9000E4BFB /* Info.plist */,
+				0072B7062638782F000E4BFB /* HistoryViewController.swift */,
 			);
 			path = "Life Counter";
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				0072B6CA263187E8000E4BFB /* ViewController.swift in Sources */,
 				0072B6C6263187E8000E4BFB /* AppDelegate.swift in Sources */,
 				0072B6C8263187E8000E4BFB /* SceneDelegate.swift in Sources */,
+				0072B7072638782F000E4BFB /* HistoryViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
