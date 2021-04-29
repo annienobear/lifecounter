@@ -62,6 +62,7 @@ class ViewController: UIViewController, UITextFieldDelegate, MyViewDelegate {
         if count < 9 {
             let playerPanel = PlayerView()
             playerPanel.data = (count, 20)
+            playerPanel.delegate = self
             Panel.addArrangedSubview(playerPanel)
         } else {
             let controller = UIAlertController(title: "Oops", message: "Cannot add player anymore", preferredStyle: .alert)
@@ -109,6 +110,7 @@ class ViewController: UIViewController, UITextFieldDelegate, MyViewDelegate {
             count += 1
             let playerPanel = PlayerView()
             playerPanel.data = (count, 20)
+            playerPanel.delegate = self
             Panel.addArrangedSubview(playerPanel)
         }
         if !addButton.isEnabled {
