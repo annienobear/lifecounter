@@ -16,6 +16,7 @@
 		0072B6DD263187E9000E4BFB /* Life_CounterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0072B6DC263187E9000E4BFB /* Life_CounterTests.swift */; };
 		0072B6E8263187E9000E4BFB /* Life_CounterUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0072B6E7263187E9000E4BFB /* Life_CounterUITests.swift */; };
 		0072B7072638782F000E4BFB /* HistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0072B7062638782F000E4BFB /* HistoryViewController.swift */; };
+		007869D6263ABB3A00BBEF6E /* PlayerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 007869D5263ABB3A00BBEF6E /* PlayerViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		0072B6E7263187E9000E4BFB /* Life_CounterUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Life_CounterUITests.swift; sourceTree = "<group>"; };
 		0072B6E9263187E9000E4BFB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0072B7062638782F000E4BFB /* HistoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryViewController.swift; sourceTree = "<group>"; };
+		007869D5263ABB3A00BBEF6E /* PlayerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PlayerViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				0072B6D0263187E9000E4BFB /* LaunchScreen.storyboard */,
 				0072B6D3263187E9000E4BFB /* Info.plist */,
 				0072B7062638782F000E4BFB /* HistoryViewController.swift */,
+				007869D5263ABB3A00BBEF6E /* PlayerViewController.xib */,
 			);
 			path = "Life Counter";
 			sourceTree = "<group>";
@@ -234,6 +237,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				007869D6263ABB3A00BBEF6E /* PlayerViewController.xib in Resources */,
 				0072B6D2263187E9000E4BFB /* LaunchScreen.storyboard in Resources */,
 				0072B6CF263187E9000E4BFB /* Assets.xcassets in Resources */,
 				0072B6CD263187E8000E4BFB /* Main.storyboard in Resources */,
