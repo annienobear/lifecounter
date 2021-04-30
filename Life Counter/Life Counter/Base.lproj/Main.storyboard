@@ -61,7 +61,7 @@
                                     <constraint firstItem="Qt3-UM-Jl4" firstAttribute="bottom" secondItem="z0C-kc-wW5" secondAttribute="bottom" id="xUN-2L-ssM"/>
                                 </constraints>
                             </view>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="22k-Mr-XJ7">
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="22k-Mr-XJ7">
                                 <rect key="frame" x="20" y="133" width="388" height="759"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                             </stackView>
