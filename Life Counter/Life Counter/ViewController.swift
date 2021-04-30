@@ -30,7 +30,7 @@ class ViewController: UIViewController, UITextFieldDelegate, MyViewDelegate {
     
     
         
-    @IBOutlet weak var Panel: UIStackView!
+    @IBOutlet weak var panel: UIStackView!
     var playerLife: [Int] =
         [20, 20, 20, 20, 20, 20, 20, 20]
     var count:Int = 4
@@ -58,12 +58,8 @@ class ViewController: UIViewController, UITextFieldDelegate, MyViewDelegate {
     }
     
     @IBAction func addPlayer(_ sender: Any) {
-        count += 1
-        if count < 9 {
-            let playerPanel = PlayerView()
-            playerPanel.data = (count, 20)
-            playerPanel.delegate = self
-            Panel.addArrangedSubview(playerPanel)
+        if count < 8 {
+            addPlayerPanelToPanel()
         } else {
             let controller = UIAlertController(title: "Oops", message: "Cannot add player anymore", preferredStyle: .alert)
             controller.addAction(UIAlertAction(title: NSLocalizedString("Got it", comment: "Good to go"), style: .default, handler: {
@@ -96,22 +92,21 @@ class ViewController: UIViewController, UITextFieldDelegate, MyViewDelegate {
     }
 
     func reset() {
-        let someVC = ViewController()
-        self.navigationController?.pushViewController(someVC, animated: true)
         let controller = UIAlertController(title: "Game Over", message: "Play Next!", preferredStyle: .alert)
         controller.addAction(UIAlertAction(title: NSLocalizedString("Got it", comment: "Good to go"), style: .default, handler: {
             _ in NSLog("k")
         }))
         present(controller, animated: true, completion: {NSLog("kk")})
+        while let first = panel.arrangedSubviews.first {
+            panel.removeArrangedSubview(first)
+            first.removeFromSuperview()
+        }
         playerLife =
             [20, 20, 20, 20, 20, 20, 20, 20]
         count = 0
+        lost = [false, false, false, false, false, false, false, false]
         while count < 4 {
-            count += 1
-            let playerPanel = PlayerView()
-            playerPanel.data = (count, 20)
-            playerPanel.delegate = self
-            Panel.addArrangedSubview(playerPanel)
+            addPlayerPanelToPanel()
         }
         if !addButton.isEnabled {
             addButton.isEnabled = true
@@ -120,20 +115,30 @@ class ViewController: UIViewController, UITextFieldDelegate, MyViewDelegate {
         loseMessage.text = "Player X LOSES!"
 
         history.append("Game reset.")
+        
+        print(count)
+    }
+    
+    func addPlayerPanelToPanel() {
+        count += 1
+        let playerPanel = PlayerView()
+        playerPanel.data = (count, 20)
+        playerPanel.delegate = self
+        let heightConstraint = NSLayoutConstraint(item: playerPanel, attribute: .height, relatedBy: .equal, toItem: nil, attribute: .notAnAttribute, multiplier: 1, constant: 150)
+        playerPanel.addConstraint(heightConstraint)
+        panel.addArrangedSubview(playerPanel)
     }
     
     override func viewDidLoad() {
+        panel.axis = .vertical
+        panel.spacing = 16
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         count = 0
         while count < 4 {
-            count += 1
-            let playerPanel = PlayerView()
-            playerPanel.data = (count, 20)
-            playerPanel.delegate = self
-            Panel.addArrangedSubview(playerPanel)
+            addPlayerPanelToPanel()
         }
-
+        count = 4
     }
 }
 
@@ -173,7 +178,6 @@ class PlayerView: UIView, UITextFieldDelegate {
         // Get the view from the instantiated nib and add it into our own tree
         let nibView = (nibInstance.first) as! UIView
         addSubview(nibView)
-        print(nibView)
         playerLabel = (nibView.subviews[0].subviews[0].subviews[0] as! UILabel)
         playerLabel.text = "Player \(data.0): "
         playerLife = (nibView.subviews[0].subviews[0].subviews[1] as! UILabel)
@@ -258,6 +262,7 @@ class PlayerView: UIView, UITextFieldDelegate {
                 c += 1
             }
         }
+        print(count, "p")
         if c == count - 1 {
             delegate?.reset()
         }

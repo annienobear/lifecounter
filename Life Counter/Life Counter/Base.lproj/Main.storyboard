@@ -76,9 +76,9 @@
                     </view>
                     <navigationItem key="navigationItem" id="iEE-P6-IOE"/>
                     <connections>
-                        <outlet property="Panel" destination="22k-Mr-XJ7" id="sc7-zh-pEl"/>
                         <outlet property="addButton" destination="faF-JL-xFa" id="RLV-Q5-FiN"/>
                         <outlet property="loseMessage" destination="Qt3-UM-Jl4" id="G33-s5-tZN"/>
+                        <outlet property="panel" destination="22k-Mr-XJ7" id="qZs-VO-fj1"/>
                         <segue destination="Rp9-HE-7xm" kind="show" identifier="toHis" id="LfV-fd-07w"/>
                     </connections>
                 </viewController>
