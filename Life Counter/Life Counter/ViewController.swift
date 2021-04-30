@@ -186,7 +186,7 @@ class PlayerView: UIView, UITextFieldDelegate {
         subCustom.tag = data.0 - 1
         subCustom.addTarget(self, action: #selector(textFieldShouldReturn(_:)), for: .editingDidEndOnExit)
         addCustom = (nibView.subviews[0].subviews[1].subviews[3].subviews[1] as! UITextField)
-        addCustom.tag = data.0 - 1 + 8
+        addCustom.tag = data.0 + 10
         addCustom.addTarget(self, action: #selector(textFieldShouldReturn(_:)), for: .editingDidEndOnExit)
         subOne = (nibView.subviews[0].subviews[1].subviews[1] as! UIButton)
         subOne.addTarget(self, action: #selector(subOne(_:)), for: .touchUpInside)
@@ -201,6 +201,7 @@ class PlayerView: UIView, UITextFieldDelegate {
         
         // This function is called when you click return key in the text field.
         func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+            print(textField.tag)
             if textField.tag <= 7 {
                 subUnknown(value: textField.text ?? "5")
                 textField.text = ""
@@ -251,7 +252,6 @@ class PlayerView: UIView, UITextFieldDelegate {
     
     func checkLose() {
         if data.1 <= 0 {
-            print(1)
             lost[data.0 - 1] = true
             history.append("Player \(data.0) LOSES!")
             delegate?.showMessage(str: "Player \(data.0) LOSES!")
